@@ -1,12 +1,14 @@
-'use client'
+"use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import Developer from "@/app/components/others/Developer";
 import title from "../../../public/title.png";
 import developerTitle from "../../../public/im_developer_at_cit.png";
 import Aos from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import HomeCompoPage2 from "@/app/components/Home/HomeCompoPage2";
+import Skill from "@/app/components/Home/Skill";
+import MyProject from "@/app/components/Home/MyProject";
 
 const page = () => {
   useEffect(() => {
@@ -18,7 +20,6 @@ const page = () => {
   return (
     <>
       <div className="bg-[#130f1a] w-full min-h-screen px-4 md:px-50 relative">
-
         <div data-aos="fade-right" className="first pt-[80px] md:pt-[107px]">
           <Developer />
           <div className="md:w-[391px] md:h-[177px] w-[181px] absolute top-80  md:top-50 right-10 md:right-70  ">
@@ -26,7 +27,10 @@ const page = () => {
           </div>
         </div>
 
-        <div data-aos="fade-up" className="Im-a-developer flex flex-col items-center mt-[360px] md:mt-[450px] ">
+        <div
+          data-aos="fade-up"
+          className="Im-a-developer flex flex-col items-center mt-[360px] md:mt-[450px] "
+        >
           <Image
             src={developerTitle}
             width={674}
@@ -44,16 +48,18 @@ const page = () => {
             </p>
           </div>
         </div>
-
       </div>
 
+      <div className="w-full h-fit bg-[#130f1a] md:py-20 py-0 ">
+        <HomeCompoPage2 />
+      </div>
 
+      <div className="w-full h-fit">
+        <Skill/>
+      </div>
 
-
-
-
-      <div className="w-full h-screen ">
-        <HomeCompoPage2/>
+      <div className=" w-full h-fit bg-[#130f1a]">
+        <MyProject/>
       </div>
     </>
   );
